@@ -14,6 +14,7 @@ import { Blog } from "./Blog";
 import { Contact } from "./Contact";
 import { NoPage } from "./NoPage";
 import CycleThrough from "./CycleThrough";
+import Temperature from "../Weather/WeatherApp/Temperature";
 const NavBar = () => {
   const [showMediaIcons, setShowMediaIcons] = useState(false);
   return (
@@ -38,7 +39,7 @@ const NavBar = () => {
               <Route path="blog" element={<Blog />} />
               <Route path="contact" element={<Contact />} />
               <Route path="*" element={<NoPage />} />
-              <Route path="weather" element={<NoPage />} />
+              <Route path="weather" element={<Temperature />} />
               {/* /Users/shreyakasare/Documents/ForBack/forwback/src/Weather/WeatherApp/index.html */}
             {/* </Route> */}
           </Routes>
