@@ -292,10 +292,10 @@ li {
 .wrappper {
   display: flex;
   width: 100%;
-  height: calc(95vh - 5px);
+  height: calc(100vh - 20px);
   justify-content: flex-start;
   align-items: normal; 
-  padding: 180px 15%;
+  padding: 150px 10%;
   /* padding: 150px 10%; */
   overflow: hidden;
 }
@@ -309,8 +309,7 @@ li {
   border-radius: 50%;
   left: -12%;
   top: 40%;
-  /* background-image: url("../Components/Assets/splash.jpg"); */
-   background: linear-gradient(45deg, #7f00ff, pink);  
+  background: linear-gradient(45deg, #7f00ff, pink);
   animation: object1 6s linear infinite;
 }
 
@@ -342,22 +341,21 @@ li {
 }
 
 .cols {
-  width: -90%;
+  width: 50%;
 }
 
 .cols0 {
   width: 60%;
   z-index: 5;
-  /* text will display above the circle */
 }
 
  .topline {
   display:block;
-  position:relative;
+  position: relative;
   font-size: 30px;
   letter-spacing: 5px;
-  color: #1b161c;
-  margin-top: 92px;
+  color: #3d535f;
+  padding-left: 20px;
 } 
 
 .topline::after {
@@ -370,10 +368,10 @@ li {
 }
 
 h1 {
-  display:contents;
-  font-size: 32px;
-  font-weight: 800;
-  color: #a043a2;
+  display: block;
+  font-size: 7em;
+  font-weight: 900;
+  color: #3d535f;
 }
 
 .multiText {
@@ -381,20 +379,17 @@ h1 {
   text-transform: capitalize;
 }
 
-
-p{
+p {
   display: block;
   width: 90%;
-  font-size: 30px;
-  color: #a043a2;
-  letter-spacing: -1px;
-word-spacing: -9px;
+  font-size: 1.2em;
+  color: #3d535f;
 }
 
 .btns {
   width: 100%;
   position: relative;
-  left: -10px;
+  left: 10px;
 }
 
 button {
@@ -404,7 +399,7 @@ button {
   font-size: 25px;
   font-weight: 400;
   color: #fff;
-  background-color: #5C87AA;
+  background-color: #F5295C;
   padding: 8px 14px;
   margin: 40px 5px;
   letter-spacing: 2px;
@@ -413,7 +408,7 @@ button {
 }
 
 button:hover {
-  background-color: #F62E5D;
+  background-color: #7f00ff;
 }
 
 .imgbox {

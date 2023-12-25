@@ -7,16 +7,43 @@ import "./navbar.css";
 import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
-import { Layout } from "./Layout";
-import { Home } from "./Home";
-import { Blog } from "./Blog";
-import { Contact } from "./Contact";
-import { NoPage } from "./NoPage";
-import CycleThrough from "./CycleThrough";
-import Temperature from "../Weather/WeatherApp/Temperature";
+import girl from "./Assets/girl.jpg";
+import Typed from "typed.js";
+import CV from "./Assets/Shreya_Kasare__CV.pdf";
+import splash from "./Assets/splash.jpg";
+
 const NavBar = () => {
   const [showMediaIcons, setShowMediaIcons] = useState(false);
+
+  const el = React.useRef(null);
+
+  React.useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: ["Myself Shreya", "I'm a FrontEnd Developer."],
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 80,
+      backDelay: 1500,
+    });
+
+    return () => {
+      // Destroy Typed instance during cleanup to stop animation
+      typed.destroy();
+    };
+  }, []);
+
+  const handleDownload = () => {
+    debugger;
+    const link = document.createElement("a");
+
+    link.href = CV; // Replace with the actual path to your CV file
+    link.download = 'Shreya_Kasare.pdf'; // Specify the desired file name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+  };
+
   return (
     <>
       <nav className="main-nav">
@@ -31,19 +58,7 @@ const NavBar = () => {
         <div
           className={
             showMediaIcons ? "menu-link mobile-menu-link" : "menu-link"
-          }
-        >
-          <Routes>
-              <Route index element={<Home />} />
-             <Route path="layout" element={<CycleThrough />}/> 
-              <Route path="blog" element={<Blog />} />
-              <Route path="contact" element={<Contact />} />
-              <Route path="*" element={<NoPage />} />
-              <Route path="weather" element={<Temperature />} />
-              {/* /Users/shreyakasare/Documents/ForBack/forwback/src/Weather/WeatherApp/index.html */}
-            {/* </Route> */}
-          </Routes>
-
+          }>
           <ul>
             <li>
               <NavLink to="/">Home</NavLink>
@@ -62,6 +77,9 @@ const NavBar = () => {
             </li>
             <li>
               <NavLink to="/weather">Weather App</NavLink>
+            </li>
+            <li>
+              <NavLink to="/cssstudy">CSS</NavLink>
             </li>
           </ul>
         </div>
@@ -98,9 +116,33 @@ const NavBar = () => {
         </div>
       </nav>
 
+      <div className="wrappper">
+        <div className="cols cols0">
+          <span className="topline">Hello</span>
+          <h1>
+            <span ref={el} />
+          </h1>
+          <p>
+            My specialization lies in building complex applications using modern
+            technologies.
+          </p>
+          <div className="btns">
+            <button onClick={handleDownload}>Download CV</button>
+            <button>Hire Me</button>
+          </div>
+        </div>
+        <div className="cols cols1">
+          <div className="imgbox">
+            {/* <img src={splash} id="splash"></img> */}
+            <img src={girl} id="girl"></img>
+            {/* <img src={splash} id="splash"></img> */}
+          </div>
+        </div>
+      </div>
+
       {/* <section className="hero-section">
         <p>Welcome</p>
-      </section> */}
+      </section>  */}
     </>
   );
 };
